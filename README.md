@@ -124,6 +124,10 @@ Results are visualized using a **Streamlit dashboard** that displays:
 
 Run the dashboard locally: streamlit run dashboard/app.py
 
+Example Streamlit monitoring dashboard used to visualize anomaly statistics.
+
+![Dashboard](dashboard/dashboard.png)
+
 ## Repository Structure
 
 artifacts/    saved scalers and thresholds  
@@ -134,3 +138,21 @@ models/       trained autoencoder models
 outputs/      run-level anomaly results  
 scripts/      preprocessing, training, and inference scripts  
 run_daily.sh  automated pipeline runner
+
+## Running the Pipeline
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run the anomaly detection pipeline:
+
+python scripts/anomalyDetector.py
+--url <RUN_DATA_URL>
+--outputFile outputs/metrics.parquet
+--pulse_output outputs/pulses.parquet
+--model_path models/cond_autoencoder.keras
+
+Launch the dashboard:
+
+streamlit run dashboard/app.py
