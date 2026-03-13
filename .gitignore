@@ -22,4 +22,6 @@ logs/
 .DS_Store
 
 # models 
-models/
+models/cond_autoencoder.h5
+models/cond_autoencoder.keras
+models/cond_encoder.keras
