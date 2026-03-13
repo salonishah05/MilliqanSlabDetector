@@ -156,3 +156,9 @@ python scripts/anomalyDetector.py
 Launch the dashboard:
 
 streamlit run dashboard/app.py
+
+## Note
+
+This repository is designed primarily for internal lab use. Its purpose is to document the structure and logic of the anomaly detection pipeline used in the Milliqan experiment.
+
+Large datasets, trained model artifacts, and environment-specific resources are not included in the repository.
