@@ -11,7 +11,7 @@ training_d/
 
 # outputs
 mod_og/
-artifacts/og
+artifacts_og/
 
 # artifacts
 *.npy
