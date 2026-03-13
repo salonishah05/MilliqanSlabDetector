@@ -1,0 +1,25 @@
+# python
+__pycache__/
+*.pyc
+
+# environments
+env/
+venv/
+
+# datasets
+data/1604All.csv
+
+# outputs
+outputs/
+logs/
+
+# artifacts
+*.npy
+*.pkl
+*.parquet
+
+# system files
+.DS_Store
+
+# models 
+models/
