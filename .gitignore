@@ -7,11 +7,11 @@ env/
 venv/
 
 # datasets
-data/1604All.csv
+training_d/
 
 # outputs
-outputs/
-logs/
+mod_og/
+artifacts/og
 
 # artifacts
 *.npy
@@ -20,8 +20,3 @@ logs/
 
 # system files
 .DS_Store
-
-# models 
-models/cond_autoencoder.h5
-models/cond_autoencoder.keras
-models/cond_encoder.keras
