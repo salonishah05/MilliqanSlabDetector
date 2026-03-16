@@ -4,13 +4,15 @@ Author: Saloni Shah
 
 ## Overview
 
-This repository implements an end-to-end anomaly detection pipeline for the **Milliqan experiment**. The system analyzes pulse-level detector data and identifies detector channels that exhibit abnormal signal behavior.
+This repository implements an end-to-end anomaly detection pipeline for the **Milliqan experiment**. The Milliqan detector records pulse-level signals across many channels. Detector issues or noise bursts can cause abnormal pulse behavior that may not be immediately visible through standard monitoring tools.
 
-The pipeline processes new run data, applies preprocessing and feature transformations, evaluates pulses using a **conditional autoencoder**, and aggregates anomaly statistics at the channel level.
-
-Channels with unusually high fractions of anomalous pulses are flagged for further inspection. Results are exported and visualized through a **Streamlit dashboard** for monitoring detector health.
+The system analyzes pulse-level detector data and provides automated anomaly detection to identify problematic detector channels early and assist with detector diagnostics.
 
 ---
+
+## Data
+Typical run size:  19 million pulses    
+Channels monitored: 96
 
 ## Pipeline
 
@@ -39,7 +41,7 @@ Steps performed:
 ## Model
 
 The anomaly detector is a **conditional autoencoder** implemented in TensorFlow/Keras.  
-The model reconstructs pulse features while conditioning on the detector **channel ID** using a learned embedding.
+The model reconstructs pulse features while conditioning on the detector **channel ID** using a learned embedding allowing the model to learn channel-specific signal distributions while sharing statistical strength across channels.
 
 ### Encoder
 
@@ -130,16 +132,23 @@ Example Streamlit monitoring dashboard used to visualize anomaly statistics.
 
 ## Repository Structure
 
-artifacts/    saved scalers and thresholds  
-dashboard/    Streamlit monitoring app  
-data/         training data  
-logs/         pipeline execution logs  
-models/       trained autoencoder models  
-outputs/      run-level anomaly results  
-scripts/      preprocessing, training, and inference scripts  
-run_daily.sh  automated pipeline runner
+artifacts/    saved scalers and thresholds     
+dashboard/    Streamlit monitoring app     
+data/         training data      
+logs/         pipeline execution logs     
+models/       trained autoencoder models      
+outputs/      run-level anomaly results     
+scripts/      preprocessing, training, and inference scripts     
+run_daily.sh  automated pipeline runner  
 
-## Running the Pipeline
+## SSH tunneling steps for the dashboard: 
+
+    1. ssh -L 8501:127.0.0.1:8501 username@cms18
+    2. Open url: http://localhost:8501
+
+## Running the Pipeline Manually 
+
+Manual execution is only required for testing or debugging.
 
 Install dependencies:
 
@@ -147,11 +156,11 @@ pip install -r requirements.txt
 
 Run the anomaly detection pipeline:
 
-python scripts/anomalyDetector.py
---url <RUN_DATA_URL>
---outputFile outputs/metrics.parquet
---pulse_output outputs/pulses.parquet
---model_path models/cond_autoencoder.keras
+python scripts/anomalyDetector.py   
+--url <RUN_DATA_URL>   
+--outputFile outputs/metrics.parquet    
+--pulse_output outputs/pulses.parquet   
+--model_path models/cond_autoencoder.keras   
 
 Launch the dashboard:
 
