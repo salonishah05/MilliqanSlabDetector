@@ -124,8 +124,11 @@ Results are visualized using a **Streamlit dashboard** that displays:
 - anomalous pulse fractions
 - run-level detector diagnostics
 
-Run the dashboard locally: streamlit run dashboard/app.py
+SSH tunneling steps for the dashboard: 
 
+    1. ssh -L 8501:127.0.0.1:8501 username@cms18
+    2. Open url: http://localhost:8501
+    
 Example Streamlit monitoring dashboard used to visualize anomaly statistics.
 
 ![Dashboard](dashboard/dashboard.png)
@@ -141,10 +144,6 @@ outputs/      run-level anomaly results
 scripts/      preprocessing, training, and inference scripts     
 run_daily.sh  automated pipeline runner  
 
-## SSH tunneling steps for the dashboard: 
-
-    1. ssh -L 8501:127.0.0.1:8501 username@cms18
-    2. Open url: http://localhost:8501
 
 ## Running the Pipeline Manually 
 
