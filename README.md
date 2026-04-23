@@ -8,8 +8,8 @@ This repository implements an end-to-end anomaly detection pipeline for the **Mi
 
 The system analyzes pulse-level detector data and provides automated anomaly detection to identify problematic detector channels early and assist with detector diagnostics.
 
-<a href="https://www.youtube.com/watch?v=VIDEO_ID](https://www.youtube.com/watch?v=rFjgGTclM9E">
-  <img src="https://img.youtube.com/vi/rFjgGTclM9E/0.jpg" alt="Video Title" width="400">
+<a href="https://www.youtube.com/watch?v=rFjgGTclM9E">
+  <img src="https://img.youtube.com/vi/rFjgGTclM9E/0.jpg" alt="the milliQan experiment" width="400">
 </a>
 
 ---
