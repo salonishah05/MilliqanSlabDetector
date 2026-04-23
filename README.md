@@ -4,9 +4,11 @@ Author: Saloni Shah
 
 ## Overview
 
-This repository implements an end-to-end anomaly detection pipeline for the [**Milliqan experiment**]([url](https://youtu.be/rFjgGTclM9E?si=x60goI9SMA9aWyC6)) at CERN. The Milliqan detector records pulse-level signals across many channels. Detector issues or noise bursts can cause abnormal pulse behavior that may not be immediately visible through standard monitoring tools.
+This repository implements an end-to-end anomaly detection pipeline for the **Milliqan experiment** at CERN. The Milliqan detector records pulse-level signals across many channels. Detector issues or noise bursts can cause abnormal pulse behavior that may not be immediately visible through standard monitoring tools.
 
 The system analyzes pulse-level detector data and provides automated anomaly detection to identify problematic detector channels early and assist with detector diagnostics.
+
+[![Background on Milliqan Experiment](https://img.youtube.com/vi/VrFjgGTclM9E/0.jpg)]([https://www.youtube.com/watch?v=VIDEO_ID](https://www.youtube.com/watch?v=rFjgGTclM9E))
 
 ---
 
